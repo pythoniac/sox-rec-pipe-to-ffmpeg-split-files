@@ -13,5 +13,5 @@ silence ... --> START recording immediately (0.0 seconds after level is over 0%)
 \
 At the receiving end of the pipe we tell ffmpeg to write out a wav file, take input from pipe and write in segments of 1 hour to a 2-digit-test.wav file\
 \
-This should come in handy for long recording session that ends automagically once level drops and have "not too long" output files for post-processing.
+This should come in handy for long recording sessions that ends automagically once level drops and have "not too long" output files for post-processing.
 
