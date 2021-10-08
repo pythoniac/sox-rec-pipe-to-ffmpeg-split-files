@@ -4,7 +4,7 @@ How to record input audio stream with sox rec, pipe it to ffmpeg and split resul
 AUDIODRIVER=alsa rec -q -b 16 -r 44100 -t wav - silence 1 0.0 0% 1 20.0 3%| ffmpeg -f wav -i pipe: -f segment -segment_time 3600 -c copy /share/test%02d.wav
 
 Translates to:\
-AUDIODRIVER=alsa --> tells rec which driver to use in case more drivers are available on the system\
+AUDIODRIVER=alsa --> tells rec which driver to use in case more drivers are available on the system\\
 rec .... --> tell it to shut up (-q; we check recording levels beforehand carefully and now only want to see the screen output of ffmpeg), specify bitrate, resolution and type of the "file" (we pipe out a stream!) to be recorded\
 NOTE the " - " after "-t wav" THIS tells rec to pipe the stream outward\
 silence ... --> START recording immediately (0.0 seconds after level is over 0%) and STOP recording once level falls 20.0 seconds under 3%\
