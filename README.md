@@ -5,7 +5,7 @@ AUDIODRIVER=alsa rec -b 16 -r 44100 -t wav - silence 1 0.0 0% 1 20.0 3%| ffmpeg 
 
 Translates to:\
 AUDIODRIVER=alsa --> tells rec which driver to use in case more drivers are available on the system\
-rec .... --> specify bitrate, resolution and type out the "file" (we pipe out a stream!) to be recorded\
+rec .... --> specify bitrate, resolution and type of the "file" (we pipe out a stream!) to be recorded\
 NOTE the " - " after "-t wav" THIS tells rec to pipe the stream outward\
 silence ... --> START recording immediately (0.0 seconds after level is over 0%) and STOP recording once level falls 20.0 seconds under 3%\
 At the receiving end of the pipe we tell ffmpeg to write out a wav file, take input from pipe and write in segments of 1 hour to a 2-digit-test.wav file\
