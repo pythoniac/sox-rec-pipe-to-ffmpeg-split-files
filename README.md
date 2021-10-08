@@ -13,5 +13,7 @@ silence ... --> START recording immediately (0.0 seconds after level is over 0%)
 \
 At the receiving end of the pipe we tell ffmpeg to write out a wav file, take input from pipe and write in segments of 1 hour to a 2-digit-test.wav file (on a smb share or easy access later on)\
 \
-This should come in handy for long recording sessions that ends automagically once level drops and have "not too long" output files for post-processing.
+This should come in handy for long recording sessions that ends automagically once level drops and have "not too long" output files for post-processing.\
+\
+We start a new ssh session and on the remote we "screen -S my_recording_session", fire the rec command, DETACH the session via CTRL+ a d and close the ssh session. After recording is finished we grab the files off the share and do post processing (cut silence at beginning, normalise to -2 db, mark noise in audacity, export multiple to .mp3).
 
